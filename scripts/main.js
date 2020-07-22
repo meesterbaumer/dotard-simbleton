@@ -1,1 +1,3 @@
-console.log("Hi")
+import { businessList } from "./BusinessList.js"
+
+businessList()
