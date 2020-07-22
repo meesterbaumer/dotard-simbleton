@@ -109,8 +109,8 @@ const businesses = [
     addressFullStreet: "7157 Hudson Street Ford",
     addressCity: "Watrous"
   }
-];
+]
 
 export const useBizProvider = () => {
-  return businesses.slice
+  return businesses.slice()
 }
