@@ -12,8 +12,9 @@ export const agentList = () => {
     agentString += agentHTML(agent)
   }
   target.innerHTML +=`
-    <div class="agentContainer" >
-      ${agentString}
-    </div>
+  <h2>Purchasing Agents</h2>  
+  <div class="agentContainer">
+    ${agentString}
+  </div>
   `
 }
