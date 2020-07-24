@@ -27,6 +27,8 @@ export const businessList = () => {
 
   newYorkTarget.innerHTML += `
   <div>
+  <h2>New York Filtered business</h2>
+  <hr>
   ${newYorkBizStringBuilder}
   </div>
   `
