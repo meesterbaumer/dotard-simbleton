@@ -1,3 +1,14 @@
 body {
   background-color: slategray;
 }
+.agentCard {
+  border: solid black 2px;
+  border-radius: 1rem;
+  margin: 1rem;
+  flex-basis: 15%;
+  padding: 1rem;
+}
+.agentContainer {
+  display: flex;
+  flex-wrap: wrap;
+}

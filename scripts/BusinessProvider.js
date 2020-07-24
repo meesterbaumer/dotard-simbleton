@@ -124,3 +124,14 @@ export const useManufactureBiz = () => {
   const manBiz = businesses.filter(onlyMan => onlyMan.companyIndustry === "Manufacturing")
   return manBiz
 }
+
+export const usePurchaseAgent = () => {
+  const agentArray = businesses.map(business => {
+    return {
+      fullName: `${business.purchasingAgent.nameFirst} ${business.purchasingAgent.nameLast}`,
+      company: business.companyName,
+      phoneNumber: business.phoneWork
+    }
+  })
+  return agentArray
+}
