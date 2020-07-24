@@ -1,35 +1,46 @@
-import { useBizProvider, newYorkBiz } from "./BusinessProvider.js"
+import { useBizProvider, useNewYorkBiz, useManufactureBiz } from "./BusinessProvider.js"
 import { businessHTMLGenerator } from "./Business.js"
 
 
 export const businessList = () => {
-    const target = document.querySelector(".listBusinesses")
-    const business = useBizProvider()
+  const business = useBizProvider()
+  const nyBiz = useNewYorkBiz()
+  const manBiz =useManufactureBiz()
+
+  const target = document.querySelector(".listBusinesses")
 
     let bizStringBuilder = ""
     for (const company of business) {
       bizStringBuilder += businessHTMLGenerator(company)
     }
-  target.innerHTML += `
-  <div>
-  ${bizStringBuilder}
-  </div>
-  `
-}
-  export const newYorkBusinessList = () => {
-    const newYorkTarget = document.querySelector(".businessList--newYork")
-    const newYorkBusiness = newYorkBiz()
-  
-    let newYorkBizStringBuilder = ""
-    for (const company of newYorkBusiness) {
-      newYorkBizStringBuilder += businessHTMLGenerator(company)
+
+    let nybizStringBuilder = ""
+    for (const company of nyBiz) {
+      nybizStringBuilder += businessHTMLGenerator(company)
     }
 
-  newYorkTarget.innerHTML += `
-  <div>
-  <h2>New York Filtered business</h2>
-  <hr>
-  ${newYorkBizStringBuilder}
+    let manufacturebizStringBuilder = ""
+    for (const company of nyBiz) {
+      manufacturebizStringBuilder += businessHTMLGenerator(company)
+    }
+
+
+  target.innerHTML += `
+  <div class="allBiz" >
+    <h2>Every Business</h2>
+    ${bizStringBuilder}
+  
+    <br>
+    <h2>NY Business</h2>
+    ${nybizStringBuilder}
+  
+    <br>
+    <h2>Manufacture Business</h2>
+    ${manufacturebizStringBuilder}
+    
+    <br>
+
   </div>
   `
 }
+  
