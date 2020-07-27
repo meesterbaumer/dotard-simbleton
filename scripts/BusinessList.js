@@ -42,7 +42,7 @@ export const businessList = () => {
 
   </div>
   `
-}
+
 
 const companySearchResultArticle = document.querySelector(".foundCompanies")
 
@@ -60,7 +60,10 @@ document
             */
            
 
-            const foundBusiness = // implement .find() method here
+            const foundBusiness = business.find(currentBusiness => {
+              
+              return currentBusiness.companyName.toUpperCase().includes(keyPressEvent.target.value.toUpperCase())
+            })
 
             companySearchResultArticle.innerHTML = `
                 <h2>
@@ -78,4 +81,4 @@ document
             `;
         }
     });
-  
+} 
